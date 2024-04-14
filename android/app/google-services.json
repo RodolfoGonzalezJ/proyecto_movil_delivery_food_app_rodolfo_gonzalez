@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "606296090174",
+    "project_id": "pizza-delivery-app-20979",
+    "storage_bucket": "pizza-delivery-app-20979.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606296090174:android:d66c43f86cab8c0f91d36f",
+        "android_client_info": {
+          "package_name": "com.example.proyecto_movil_delivery_food_app_rodolfo_gonzalez"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtdg5XPXEqvRmxlR-PZ0cUUvm6AZfN2rU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
