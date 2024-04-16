@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../components/my_text_field.dart';
 import '../blocs/sign_in_bloc/sign_in_bloc.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -35,7 +36,7 @@ class _SignInScreenState extends State<SignInScreen> {
         } else if (state is SignInFailure) {
           setState(() {
             signInRequired = false;
-            _errorMsg = 'Invalid email or password';
+            _errorMsg = 'Correo electrónico o contraseña no válidos';
           });
         }
       },
@@ -48,17 +49,17 @@ class _SignInScreenState extends State<SignInScreen> {
                   width: MediaQuery.of(context).size.width * 0.9,
                   child: MyTextField(
                       controller: emailController,
-                      hintText: 'Email',
+                      hintText: 'Correo Electrónico',
                       obscureText: false,
                       keyboardType: TextInputType.emailAddress,
                       prefixIcon: const Icon(CupertinoIcons.mail_solid),
                       errorMsg: _errorMsg,
                       validator: (val) {
                         if (val!.isEmpty) {
-                          return 'Please fill in this field';
+                          return 'Por favor, rellene este campo';
                         } else if (!RegExp(r'^[\w-\.]+@([\w-]+.)+[\w-]{2,4}$')
                             .hasMatch(val)) {
-                          return 'Please enter a valid email';
+                          return 'Por favor, introduzca un correo electrónico válido';
                         }
                         return null;
                       })),
@@ -67,18 +68,18 @@ class _SignInScreenState extends State<SignInScreen> {
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: MyTextField(
                   controller: passwordController,
-                  hintText: 'Password',
+                  hintText: 'Contraseña',
                   obscureText: obscurePassword,
                   keyboardType: TextInputType.visiblePassword,
                   prefixIcon: const Icon(CupertinoIcons.lock_fill),
                   errorMsg: _errorMsg,
                   validator: (val) {
                     if (val!.isEmpty) {
-                      return 'Please fill in this field';
+                      return 'Por favor, rellene este campo';
                     } else if (!RegExp(
                             r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~`)\%\-(_+=;:,.<>/?"[{\]}\|^]).{8,}$')
                         .hasMatch(val)) {
-                      return 'Please enter a valid password';
+                      return 'Por favor, introduzca una contraseña válida';
                     }
                     return null;
                   },
@@ -120,7 +121,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             padding: EdgeInsets.symmetric(
                                 horizontal: 25, vertical: 5),
                             child: Text(
-                              'Sign In',
+                              'Iniciar Sesion',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,

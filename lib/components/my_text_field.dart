@@ -4,7 +4,7 @@ class MyTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final bool obscureText;
-  final TextInputType keyboradType;
+  final TextInputType keyboardType;
   final Widget? suffixIcon;
   final VoidCallback? onTap;
   final Widget? prefixIcon;
@@ -18,7 +18,7 @@ class MyTextField extends StatelessWidget {
       required this.controller,
       required this.hintText,
       required this.obscureText,
-      required this.keyboradType,
+      required this.keyboardType,
       this.suffixIcon,
       this.onTap,
       this.prefixIcon,
@@ -29,6 +29,32 @@ class MyTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return TextFormField(
+      validator: validator,
+      controller: controller,
+      obscureText: obscureText,
+      keyboardType: keyboardType,
+      focusNode: focusNode,
+      onTap: onTap,
+      textInputAction: TextInputAction.next,
+      onChanged: onChanged,
+      decoration: InputDecoration(
+        suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: Colors.transparent),
+        ),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide:
+                BorderSide(color: Theme.of(context).colorScheme.secondary)),
+        fillColor: Colors.grey.shade200,
+        filled: true,
+        hintText: hintText,
+        hintStyle: TextStyle(color: Colors.grey[500]),
+        errorText: errorMsg,
+      ),
+    );
   }
 }

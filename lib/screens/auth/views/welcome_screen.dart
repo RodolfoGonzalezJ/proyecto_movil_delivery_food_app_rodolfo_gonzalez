@@ -76,7 +76,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                                 Padding(
                                   padding: EdgeInsets.all(12.0),
                                   child: Text(
-                                    'Sign In',
+                                    'Inicio de sesíon',
                                     style: TextStyle(
                                       fontSize: 18,
                                     ),
@@ -85,7 +85,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                                 Padding(
                                   padding: EdgeInsets.all(12.0),
                                   child: Text(
-                                    'Sing Up',
+                                    'Registro',
                                     style: TextStyle(
                                       fontSize: 18,
                                     ),

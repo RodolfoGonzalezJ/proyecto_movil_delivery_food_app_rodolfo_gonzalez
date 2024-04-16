@@ -53,16 +53,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: MyTextField(
                     controller: emailController,
-                    hintText: 'Email',
+                    hintText: 'Correo electrónico',
                     obscureText: false,
                     keyboardType: TextInputType.emailAddress,
                     prefixIcon: const Icon(CupertinoIcons.mail_solid),
                     validator: (val) {
                       if (val!.isEmpty) {
-                        return 'Please fill in this field';
+                        return 'Por favor, rellene este campo';
                       } else if (!RegExp(r'^[\w-\.]+@([\w-]+.)+[\w-]{2,4}$')
                           .hasMatch(val)) {
-                        return 'Please enter a valid email';
+                        return 'Por favor, introduzca un correo electrónico válido';
                       }
                       return null;
                     }),
@@ -72,7 +72,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: MyTextField(
                     controller: passwordController,
-                    hintText: 'Password',
+                    hintText: 'Contraseña',
                     obscureText: obscurePassword,
                     keyboardType: TextInputType.visiblePassword,
                     prefixIcon: const Icon(CupertinoIcons.lock_fill),
@@ -140,11 +140,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     validator: (val) {
                       if (val!.isEmpty) {
-                        return 'Please fill in this field';
+                        return 'Por favor, rellene este campo';
                       } else if (!RegExp(
                               r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~`)\%\-(_+=;:,.<>/?"[{\]}\|^]).{8,}$')
                           .hasMatch(val)) {
-                        return 'Please enter a valid password';
+                        return 'Por favor, introduzca una contraseña válida';
                       }
                       return null;
                     }),
@@ -158,21 +158,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "⚈  1 uppercase",
+                        "⚈  1 mayúscula",
                         style: TextStyle(
                             color: containsUpperCase
                                 ? Colors.green
                                 : Theme.of(context).colorScheme.onBackground),
                       ),
                       Text(
-                        "⚈  1 lowercase",
+                        "⚈  1 minúscula",
                         style: TextStyle(
                             color: containsLowerCase
                                 ? Colors.green
                                 : Theme.of(context).colorScheme.onBackground),
                       ),
                       Text(
-                        "⚈  1 number",
+                        "⚈  1 número",
                         style: TextStyle(
                             color: containsNumber
                                 ? Colors.green
@@ -184,14 +184,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "⚈  1 special character",
+                        "⚈  1 carácter especial",
                         style: TextStyle(
                             color: containsSpecialChar
                                 ? Colors.green
                                 : Theme.of(context).colorScheme.onBackground),
                       ),
                       Text(
-                        "⚈  8 minimum character",
+                        "⚈  8 caracteres mínimos",
                         style: TextStyle(
                             color: contains8Length
                                 ? Colors.green
@@ -206,15 +206,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: MyTextField(
                     controller: nameController,
-                    hintText: 'Name',
+                    hintText: 'Nombre de usuario',
                     obscureText: false,
                     keyboardType: TextInputType.name,
                     prefixIcon: const Icon(CupertinoIcons.person_fill),
                     validator: (val) {
                       if (val!.isEmpty) {
-                        return 'Please fill in this field';
+                        return 'Por favor, rellene este campo';
                       } else if (val.length > 30) {
-                        return 'Name too long';
+                        return 'Nombre demasiado largo';
                       }
                       return null;
                     }),
@@ -247,7 +247,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             padding: EdgeInsets.symmetric(
                                 horizontal: 25, vertical: 5),
                             child: Text(
-                              'Sign Up',
+                              'Registrarse',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
