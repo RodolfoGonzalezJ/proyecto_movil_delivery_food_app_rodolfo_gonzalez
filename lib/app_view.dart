@@ -17,6 +17,7 @@ class MyAppView extends StatelessWidget {
         theme: ThemeData(
             colorScheme: ColorScheme.light(
                 background: Colors.grey.shade200,
+                outlineVariant: Colors.grey.shade300,
                 onBackground: Colors.black,
                 primary: Colors.blue,
                 onPrimary: Colors.white)),

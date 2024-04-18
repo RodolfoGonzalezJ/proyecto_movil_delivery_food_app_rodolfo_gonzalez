@@ -43,12 +43,13 @@ class MyTextField extends StatelessWidget {
         prefixIcon: prefixIcon,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(color: Colors.transparent),
+          borderSide:
+              BorderSide(color: Theme.of(context).colorScheme.outlineVariant),
         ),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
             borderSide:
-                BorderSide(color: Theme.of(context).colorScheme.secondary)),
+                BorderSide(color: Theme.of(context).colorScheme.primary)),
         fillColor: Colors.grey.shade200,
         filled: true,
         hintText: hintText,

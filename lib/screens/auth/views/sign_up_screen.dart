@@ -161,21 +161,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         "⚈  1 mayúscula",
                         style: TextStyle(
                             color: containsUpperCase
-                                ? Colors.green
+                                ? Theme.of(context).colorScheme.primary
                                 : Theme.of(context).colorScheme.onBackground),
                       ),
                       Text(
                         "⚈  1 minúscula",
                         style: TextStyle(
                             color: containsLowerCase
-                                ? Colors.green
+                                ? Theme.of(context).colorScheme.primary
                                 : Theme.of(context).colorScheme.onBackground),
                       ),
                       Text(
                         "⚈  1 número",
                         style: TextStyle(
                             color: containsNumber
-                                ? Colors.green
+                                ? Theme.of(context).colorScheme.primary
                                 : Theme.of(context).colorScheme.onBackground),
                       ),
                     ],
@@ -187,14 +187,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         "⚈  1 carácter especial",
                         style: TextStyle(
                             color: containsSpecialChar
-                                ? Colors.green
+                                ? Theme.of(context).colorScheme.primary
                                 : Theme.of(context).colorScheme.onBackground),
                       ),
                       Text(
                         "⚈  8 caracteres mínimos",
                         style: TextStyle(
                             color: contains8Length
-                                ? Colors.green
+                                ? Theme.of(context).colorScheme.primary
                                 : Theme.of(context).colorScheme.onBackground),
                       ),
                     ],
