@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../../components/macro.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
@@ -42,7 +46,7 @@ class DetailsScreen extends StatelessWidget {
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: [
                     Row(
@@ -85,6 +89,62 @@ class DetailsScreen extends StatelessWidget {
                           ),
                         )
                       ],
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    const Row(
+                      children: [
+                        MyMacroWidget(
+                            title: 'Calorias',
+                            value: 267,
+                            icon: FontAwesomeIcons.fire),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        MyMacroWidget(
+                            title: 'Proteina',
+                            value: 36,
+                            icon: FontAwesomeIcons.dumbbell),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        MyMacroWidget(
+                            title: 'Grasas',
+                            value: 21,
+                            icon: FontAwesomeIcons.oilWell),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        MyMacroWidget(
+                            title: 'Carbohidratos',
+                            value: 38,
+                            icon: FontAwesomeIcons.breadSlice),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                            elevation: 3.0,
+                            backgroundColor:
+                                Theme.of(context).colorScheme.onBackground,
+                            foregroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10))),
+                        child: const Text(
+                          'Comprar ahora',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
                     )
                   ],
                 ),
