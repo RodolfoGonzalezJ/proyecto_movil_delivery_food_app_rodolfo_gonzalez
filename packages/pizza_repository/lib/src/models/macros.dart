@@ -6,15 +6,20 @@ class Macros {
   int fat;
   int carbs;
 
-  Macros(
-      {required this.calories,
-      required this.proteins,
-      required this.fat,
-      required this.carbs});
+  Macros({
+    required this.calories,
+    required this.proteins,
+    required this.fat,
+    required this.carbs,
+  });
 
   MacrosEntity toEntity() {
     return MacrosEntity(
-        calories: calories, proteins: proteins, fat: fat, carbs: carbs);
+      calories: calories,
+      proteins: proteins,
+      fat: fat,
+      carbs: carbs,
+    );
   }
 
   static Macros fromEntity(MacrosEntity entity) {
