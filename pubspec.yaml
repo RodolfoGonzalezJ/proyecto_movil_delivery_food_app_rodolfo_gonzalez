@@ -12,7 +12,21 @@ dependencies:
   cupertino_icons: ^1.0.6
   font_awesome_flutter: ^10.6.0
 
-  firebase_core: ^2.16.0
+  flutter_stripe: ^10.1.1
+
+  http: ^1.2.1
+
+  shared_preferences: ^2.2.3
+
+  image_picker: ^1.1.2
+
+  random_string: ^2.3.1
+
+  firebase_storage: ^11.7.7
+
+  firebase_core: ^2.24.2
+
+  firebase_auth: ^4.16.0
 
   bloc: ^8.1.2
   flutter_bloc: ^8.1.3

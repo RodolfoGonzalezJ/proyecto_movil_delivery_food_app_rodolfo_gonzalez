@@ -4,8 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:proyecto_movil_delivery_food_app_rodolfo_gonzalez/screens/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
 import 'package:proyecto_movil_delivery_food_app_rodolfo_gonzalez/screens/home/views/details_screen.dart';
-import 'package:proyecto_movil_delivery_food_app_rodolfo_gonzalez/screens/home/views/card_screen.dart';
-
+import 'package:proyecto_movil_delivery_food_app_rodolfo_gonzalez/screens/home/views/nav_screen.dart';
+import 'package:proyecto_movil_delivery_food_app_rodolfo_gonzalez/screens/home/views/order.dart';
 import '../blocs/get_pizza_bloc/get_pizza_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavBar(),
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.background,
@@ -41,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute<void>(
-                      builder: (BuildContext context) => const CardScreen()),
+                      builder: (BuildContext context) => const Order()),
                 );
               },
               icon: const Icon(CupertinoIcons.cart)),
@@ -166,6 +167,9 @@ class HomeScreen extends StatelessWidget {
                                       color: Colors.grey.shade500),
                                 ),
                               ),
+                              SizedBox(
+                                height: 10,
+                              ),
                               Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 12),
@@ -176,7 +180,7 @@ class HomeScreen extends StatelessWidget {
                                       Row(
                                         children: [
                                           Text(
-                                            "\$${state.pizzas[i].price - (state.pizzas[i].price * (state.pizzas[i].discount) / 100)}",
+                                            "\$${(state.pizzas[i].price - (state.pizzas[i].price * (state.pizzas[i].discount) / 100)).round()}",
                                             style: TextStyle(
                                                 fontSize: 12,
                                                 color: Theme.of(context)
@@ -198,10 +202,6 @@ class HomeScreen extends StatelessWidget {
                                           ),
                                         ],
                                       ),
-                                      IconButton(
-                                          onPressed: () {},
-                                          icon: const Icon(
-                                              CupertinoIcons.add_circled_solid))
                                     ],
                                   ))
                             ],

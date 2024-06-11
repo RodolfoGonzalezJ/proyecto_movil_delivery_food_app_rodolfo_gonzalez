@@ -66,4 +66,29 @@ class FirebaseUserRepo implements UserRepository {
       rethrow;
     }
   }
+
+  updateUserWallet(String id, String amount) async {
+    return await FirebaseFirestore.instance
+        .collection("users")
+        .doc(id)
+        .update({"wallet": amount});
+  }
+
+  Future<void> addFoodToCart(
+      Map<String, dynamic> userInfoMap, String id) async {
+    try {
+      await usersCollection.doc(id).collection("Cart").add(userInfoMap);
+    } catch (e) {
+      log(e.toString());
+      rethrow;
+    }
+  }
+
+  Future<Stream<QuerySnapshot>> getFoodCart(String id) async {
+    return await FirebaseFirestore.instance
+        .collection("users")
+        .doc(id)
+        .collection("Cart")
+        .snapshots();
+  }
 }
