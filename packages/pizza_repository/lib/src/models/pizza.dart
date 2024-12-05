@@ -1,7 +1,9 @@
+import 'package:equatable/equatable.dart';
+
 import '../entities/entities.dart';
 import 'models.dart';
 
-class Pizza {
+class Pizza extends Equatable {
   String pizzaId;
   String picture;
   bool isVeg;
@@ -51,4 +53,17 @@ class Pizza {
       macros: entity.macros,
     );
   }
+
+  @override
+  List<Object?> get props => [
+        pizzaId,
+        picture,
+        isVeg,
+        spicy,
+        name,
+        description,
+        price,
+        discount,
+        macros,
+      ];
 }
